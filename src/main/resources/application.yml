@@ -1,0 +1,45 @@
+server:
+  port: 8989
+  session:
+    timeout: 2147483647
+security:
+  basic:
+    enabled: false
+  user:
+    name: xxx
+    password: xxxx
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&createDatabaseIfNotExist=true
+    #username: root
+   # password: 1234
+  application:
+    name: solr-data-import
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: INFO
+    org.hibernate.type.descriptor.sql.BasicExtractor: INFO
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://xxxxxxxx
+    
+  instance:
+    prefer-ip-address: true
+
+#SolrCloud zookeeper
+solr:
+  cloud:
+    zkHost: 192.168.1.214:2181,192.168.1.233:2182,192.168.1.234:2183
+    defaultCollection: element_all
+    security:
+      username: tom
+      password: TomIsCool
